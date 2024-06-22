@@ -7,13 +7,13 @@ const Projects = () => {
         title: "Wordle Arena",
         description: "Built a fully-functional multiplayer arena using React for the front-end and Web Sockets for real-time bi-directional communication, enhancing user engagement.",
         link: "https://github.com/piyushraz/wordle-react-web", 
-        imageUrl: "/wordle.png"
+        imageUrl: "wordle.png"
     },
     {
       title: "Three Musketeers AI-Augmented",
       description: "Developed an AI-driven board game, Three Musketeers, using Java and JavaFX, featuring a greedy AI agent implemented with the minimax algorithm, emphasizing object-oriented programming principles.",
       link: "https://github.com/piyushraz/Java-Three-Musketeers", // Placeholder link, replace with actual project URL
-      imageUrl: "/threem.jpg" // Placeholder image
+      imageUrl: "threem.jpg" // Placeholder image
     },
     {
       title: "Echo Modifier",
@@ -25,7 +25,7 @@ const Projects = () => {
       title: "RainMan Discord Weather Bot",
       description: "Created a Discord bot that provides real-time weather information for any location using the OpenWeatherMap API and Discord.py.",
       link: "https://devpost.com/software/rainman-r6hqfs", // Placeholder link, replace with actual project URL
-      imageUrl: "/discord.png" // Placeholder image
+      imageUrl: "discord.png" // Placeholder image
     }
   ];
 
