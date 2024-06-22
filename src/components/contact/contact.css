@@ -1,0 +1,63 @@
+.contact-section {
+    text-align: center;
+    padding: 60px 0; /* Increased padding for better spacing */
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+  }
+  
+  .contact-container p {
+    margin: 0;
+    font-size: 1.2em; /* Increased font size for better readability */
+  }
+  
+  .back-to-top {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .back-to-top img {
+    width: 32px; /* Increased size for better visibility */
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  
+  .back-to-top img:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 20px; /* Increased gap for better spacing */
+    justify-content: center; /* Center the social icons */
+  }
+  
+  .social-icons img {
+    width: 32px; /* Increased size for better visibility */
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center; /* Center align items on smaller screens */
+      gap: 20px; /* Add gap between items on smaller screens */
+    }
+  
+    .social-icons {
+      margin-top: 20px;
+    }
+  }
+  

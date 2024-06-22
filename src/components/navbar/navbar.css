@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+  background: linear-gradient(to right, #89CFF0, white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 60%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.3s;
+  z-index: 1000;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-weight: 500;
+  color: darkslateblue;
+  font-size: 15px;
+  padding: 1px 10px;
+}
+
+.nav-item:hover, .nav-item:focus {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.visible {
+  top: 0;
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.navbar:not(.visible) {
+  top: -100px; /* Adjusted to ensure it hides completely */
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
+
+  .nav-item {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .navbar:not(.visible) {
+    top: -100%; /* Ensures the navbar is completely hidden when not visible */
+  }
+}

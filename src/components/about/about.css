@@ -1,0 +1,63 @@
+.about-section {
+    padding-top: 92px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between the items */
+    align-items: flex-start; /* Align items at the top */
+    text-align: left;
+    width: 80%; /* Adjust width as needed */
+    margin: auto; /* Center the section horizontally */
+}
+
+.about-section h1 {
+    padding-left: 150px;
+    font-size: 2em; /* Adjust the font size for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+    position: relative;
+}
+
+.about-section h1::after {
+    content: "";
+    display: block;
+    width: 50px; /* Adjust the width of the underline */
+    height: 3px; /* Adjust the height of the underline */
+    background-color: blue; /* Underline color */
+    margin-top: 5px; /* Space between the text and the underline */
+}
+
+.about-section p {
+    font-size: 1em; /* Adjust the font size for the paragraph */
+    line-height: 1.3; /* Line height for better readability */
+    max-width: 800px; /* Limit the width of the text */
+}
+
+.about-section a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.about-section a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        height: 35vh; /* Ensure it fits within 35vh */
+    }
+
+    .about-section h1 {
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-section p {
+        max-width: 100%;
+        padding: 0 10px; /* Add padding for better readability */
+    }
+}

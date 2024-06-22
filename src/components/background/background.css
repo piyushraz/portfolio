@@ -1,0 +1,15 @@
+.background-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Confine the background image to the height of the top section */
+    background-image: url('C:/Profile/my-app/public/code-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(7px);
+    transform: scale(1.1);
+    z-index: -1; /* Ensures background is behind other content */
+  }
+  

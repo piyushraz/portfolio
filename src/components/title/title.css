@@ -1,0 +1,49 @@
+.title-container {
+    position: absolute; /* Position over the background */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    text-align: center;
+    color: white; /* Ensures text stands out against the background */
+    display: flex;
+    flex-direction: column; /* Stacks the items vertically */
+    align-items: center; /* Centers items horizontally */
+    gap: 10px; /* Tightens the gap between elements */
+}
+
+.title-container h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 6em; /* Adjusted to more closely match the example */
+    font-weight: bold; /* Make the font bold */
+    line-height: 1; /* Ensures the line height is tight */
+}
+
+.title-container p {
+    font-size: 2.5em; /* Adjusted for proportional spacing */
+    margin: 0; /* Remove default margin */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    width: 100%; /* Full width to utilize flexbox centering */
+    margin-top: 20px; /* Adds a bit more space above the buttons */
+}
+
+.buttons button {
+    margin: 0 10px; /* Reduced margin for closer button spacing */
+    padding: 10px 25px; /* Adjust padding to match the example */
+    font-size: 1.5em; /* Smaller font size for the buttons */
+    color: white; /* Text color for the buttons */
+    background-color: transparent; /* Transparent button background */
+    border: 2px solid white; /* Solid white border for visibility */
+    border-radius: 25px;
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.buttons button:hover {
+    background-color: white; /* Background color on hover */
+    color: darkslategray; /* Text color on hover */
+}
