@@ -14,7 +14,7 @@ const Title = () => {
             <h1>PIYUSH RAZDAN</h1>
             <p>Software Engineer</p>
             <div className="buttons">
-                <button onClick={() => window.location = '/resume.pdf'}>View Resume</button>
+                <button onClick={() => window.location = 'resume.pdf'}>View Resume</button>
                 <button onClick={handleDownload}>Download Resume</button>
             </div>
         </div>
