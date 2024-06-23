@@ -3,9 +3,9 @@ import './skills.css';
 
 const Skills = () => {
   const skills = [
-    'Python', 'C', 'Java', 'JavaScript', 'Assembly', 'Racket', 'Haskell', 'C++',
-    'MongoDB', 'PHP', 'HTML', 'CSS', 'TypeScript', 'React', 'PSQL',
-    'YAML', 'Azure', 'AWS', 'Git', 'Linux', 'Bash', 'Shell'
+    'Assembly', 'AWS', 'Azure', 'Bash', 'C', 'C++', 'CSS', 'Git',
+    'Haskell', 'HTML', 'Java', 'JavaScript', 'Linux', 'MongoDB',
+    'PHP', 'PSQL', 'Python', 'Racket', 'React', 'Shell', 'TypeScript', 'YAML'
   ];
 
   return (
