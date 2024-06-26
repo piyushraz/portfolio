@@ -4,18 +4,16 @@ import './navbar.css';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.pageYOffset;
-      setVisible(currentScrollY < lastScrollY || currentScrollY <= 50); 
-      setLastScrollY(currentScrollY); 
+      const atTop = window.pageYOffset === 0;
+      setVisible(atTop);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <nav className={`navbar ${visible ? 'visible' : ''}`}>

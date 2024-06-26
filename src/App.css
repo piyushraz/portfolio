@@ -20,12 +20,6 @@ body {
 }
 
 
-.mid-height {
-  height: 75vh; 
-  position: relative; 
-  overflow: hidden; 
-}
-
 .small-height {
   height: 35vh; 
   background-color: #ffffff; 
@@ -33,18 +27,15 @@ body {
 }
 
 .contact-height {
-  height: 17vh; 
   color: #333; 
 }
 
 
 .skill-height {
-  height: 35vh; 
   color: #333; 
 }
 
 .education-height {
-  height: 50vh;
   position: relative; 
   overflow: hidden; 
 }
@@ -73,38 +64,3 @@ body {
   background-color: lightblue; 
 }
 
-@media (max-width: 1024px) {
-  .mid-height {
-    height: 52vh; 
-  }
-  .small-height {
-    height: 35vh; 
-  }
-  .education-height {
-    height:45vh;
-  }
-
-}
-
-
-@media (max-width: 430px) {
-  .mid-height {
-    height: 110vh; 
-  }
-  .small-height {
-    height: 35vh; 
-  }
-  .education-height {
-    height:52vh;
-  }
-}
-
-
-@media (max-width: 415px) {
-  .mid-height {
-    height: 120vh; 
-  }
-  .small-height {
-    height: 35vh; 
-  }
-}
