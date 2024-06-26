@@ -36,7 +36,7 @@
 }
 
 .navbar:not(.visible) {
-  top: -100px; /* Adjusted to ensure it hides completely */
+  top: -100px;
 }
 
 @keyframes slideDown {
@@ -65,6 +65,6 @@
   }
 
   .navbar:not(.visible) {
-    top: -100%; /* Ensures the navbar is completely hidden when not visible */
+    top: -100%; 
   }
 }

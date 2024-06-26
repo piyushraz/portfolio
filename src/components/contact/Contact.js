@@ -3,7 +3,7 @@ import './contact.css';
 
 const Contact = () => {
   const scrollToTop = () => {
-    const scrollDuration = 1000; // Duration in milliseconds
+    const scrollDuration = 1000; 
     const scrollStep = -window.scrollY / (scrollDuration / 15);
     const scrollInterval = setInterval(() => {
       if (window.scrollY !== 0) {

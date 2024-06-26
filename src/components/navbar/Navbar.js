@@ -9,8 +9,8 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
-      setVisible(currentScrollY < lastScrollY || currentScrollY <= 50); // Shows navbar on scroll up or at the top
-      setLastScrollY(currentScrollY); // Updates the last scroll position
+      setVisible(currentScrollY < lastScrollY || currentScrollY <= 50); 
+      setLastScrollY(currentScrollY); 
     };
 
     window.addEventListener('scroll', handleScroll);

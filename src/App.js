@@ -36,7 +36,6 @@ function App() {
       <section id="contact-section" className="contact-height">
         <Contact />
       </section>
-      {/* Additional components or content could be added below */}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 .experience-section {
-    background-color: #f5f5f5; /* Light grey background */
+    background-color: #f5f5f5; 
     padding: 60px 20px;
-    max-height: 50vh; /* Ensure the section takes up at least 50% of the viewport height */
-    position: relative; /* Add this line if not present */
+    max-height: 50vh; 
+    position: relative; 
 }
 
 .experience-section h1 {
@@ -10,36 +10,36 @@
     font-size: 3em;
     margin-bottom: 40px;
     color: #333;
-    position: relative; /* Add this line */
-    z-index: 1; /* Ensure it's above other elements */
+    position: relative; 
+    z-index: 1; 
 }
 
 .experience-section h1::after {
     content: '';
     display: block;
-    width: 50px; /* Adjust as needed */
+    width: 50px; 
     height: 3px;
-    background-color: #007bff; /* Blue color */
-    margin: 5px auto 0; /* Adjust spacing */
+    background-color: #007bff; 
+    margin: 5px auto 0; 
 }
 
 .timeline {
     position: relative;
     max-width: 800px;
-    margin: 0 auto; /* Center the timeline */
+    margin: 0 auto; 
     padding: 20px 20px;
-    z-index: 0; /* Ensure it is behind the icon */
+    z-index: 0; 
 }
 
 .timeline::after {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #89CFF0; /* Timeline line color */
+    background-color: #89CFF0; 
     top: 0;
     bottom: 0;
-    left: 15px; /* Adjust to ensure it aligns with the icons */
-    z-index: -1; /* Ensure it is behind the icon */
+    left: 15px; 
+    z-index: -1; 
 }
 
 .timeline-item {
@@ -48,58 +48,58 @@
     background-color: inherit;
     width: 100%;
     left: 50%;
-    transform: translateX(-50%); /* Center the items */
+    transform: translateX(-50%); 
     margin-bottom: 20px;
-    z-index: 1; /* Ensure it is above the timeline */
+    z-index: 1; 
 }
 
 .timeline-item .timeline-icon {
     position: absolute;
-    top: 0; /* Adjust to align with the timeline line */
-    left: 0; /* Center the icon */
-    width: 50px; /* Increased width */
-    height: 50px; /* Increased height */
+    top: 0; 
+    left: 0; 
+    width: 50px; 
+    height: 50px; 
     transform: translateX(-56%);
-    z-index: 2; /* Ensure it's in front of the line */
+    z-index: 2; 
 }
 
 .timeline-item .timeline-icon img {
     position: absolute;
-    z-index: 3; /* Ensure it's in front of the line */
+    z-index: 3; 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the area */
-    border-radius: 50%; /* Remove border-radius if you don't want it circular */
+    object-fit: cover; 
+    border-radius: 50%; 
 }
 
 .timeline-item .timeline-icon2 {
     position: absolute;
-    bottom: -7px; /* Adjust to align with the timeline line */
-    left: 0; /* Center the icon */
-    width: 50px; /* Increased width */
-    height: 50px; /* Increased height */
+    bottom: -7px; 
+    left: 0;
+    width: 50px; 
+    height: 50px; 
     transform: translateX(-56%);
-    z-index: 2; /* Ensure it's in front of the line */
+    z-index: 2; 
 }
 
 .timeline-item .timeline-icon2 img {
     position: absolute;
-    z-index: 3; /* Ensure it's in front of the line */
+    z-index: 3; 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the area */
-    border-radius: 50%; /* Remove border-radius if you don't want it circular */
+    object-fit: cover; 
+    border-radius: 50%; 
 }
 
 .timeline-item .timeline-content {
     padding: 20px 30px;
-    background-color: #ffffff; /* Content background color */
+    background-color: #ffffff; 
     position: relative;
     border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1; /* Ensure it's above the timeline */
+    z-index: 1; 
 }
 
 .timeline-item .timeline-content h2 {
@@ -130,18 +130,18 @@
     .timeline::after,
     .timeline-item .timeline-icon,
     .timeline-item .timeline-icon2 {
-        display: none; /* Hide the timeline line and icons */
+        display: none; 
     }
 
     .timeline-item {
-        padding: 20px 0; /* Adjust padding for smaller screens */
+        padding: 20px 0; 
     }
 
     .timeline-item .timeline-content {
         left: 0;
-        transform: none; /* Remove the transformation */
-        width: 90%; /* Ensure the content takes full width */
-        margin: 0 auto; /* Center the content */
+        transform: none; 
+        width: 90%; 
+        margin: 0 auto; 
     }
 }
 

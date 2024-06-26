@@ -1,16 +1,16 @@
 .education-section {
-  min-height: 50vh; /* Minimum height */
-  max-height: 50vh; /* Maximum height to match the minimum */
-  padding: 40px; /* Adjust padding as needed */
+  min-height: 50vh; 
+  max-height: 50vh; 
+  padding: 40px; 
   background-color: white;
   color: #333;
-  overflow: auto; /* Keeps overflow handling but tries to prevent its need */
+  overflow: auto; 
 }
 
 .education-section h1 {
   text-align: center;
   font-size: 2.5em;
-  margin-bottom: 20px; /* Adjusted margin */
+  margin-bottom: 20px; 
   color: #333;
   position: relative;
 }
@@ -18,10 +18,10 @@
 .education-section h1::after {
   content: '';
   display: block;
-  width: 50px; /* Adjust as needed */
+  width: 50px; 
   height: 3px;
-  background-color: #007bff; /* Blue color */
-  margin: 5px auto 0; /* Adjust spacing */
+  background-color: #007bff; 
+  margin: 5px auto 0; 
 }
 
 .education-container {
@@ -75,49 +75,48 @@
   text-align: right;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 900px) {
   .education-section {
-    min-height: 70vh; /* Increase height for smaller screens */
+    min-height: 70vh; 
     max-height: 70vh;
-    padding: 20px; /* Adjust padding */
+    padding: 20px; 
   }
 
   .education-container {
-    width: 80%; /* Adjust width */
+    width: 80%; 
   }
 
   .education-item {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items at the start */
-    padding: 20px; /* Adjust padding */
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 20px; 
   }
 
   .education-dates {
     padding-bottom: 20px;
-    text-align: left; /* Align text to the left */
+    text-align: left; 
   }
 }
 
 @media (max-width: 600px) {
   .education-section {
-    min-height: 80vh; /* Further increase height for smaller screens */
+    min-height: 80vh; 
     max-height: 80vh;
-    padding: 10px; /* Adjust padding */
+    padding: 10px; 
   }
 
   .education-container {
-    width: 100%; /* Full width */
+    width: 100%; 
   }
 
   .education-item {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items at the start */
-    padding: 15px; /* Adjust padding */
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 15px; 
   }
 
   .education-dates {
     padding-bottom: 10px;
-    text-align: left; /* Align text to the left */
+    text-align: left; 
   }
 }
