@@ -41,7 +41,7 @@
     text-decoration: underline; 
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     .about-section {
         flex-direction: column;
         justify-content: center;
