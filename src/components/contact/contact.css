@@ -14,10 +14,11 @@
   
   .contact-container p {
     margin: 0;
-    font-size: 1.2em; 
+    font-size: 1em; 
   }
   
   .back-to-top {
+    margin-right: 6.5%;
     text-align: center;
     cursor: pointer;
   }
