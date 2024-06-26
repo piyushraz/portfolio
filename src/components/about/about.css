@@ -59,4 +59,14 @@
         max-width: 100%;
         padding: 0 10px; 
     }
+
+    .about-section h1::after {
+        content: "";
+        display: block;
+        width: 60px; 
+        height: 3px; 
+        background-color: blue; 
+        margin-top: 5px; 
+        margin-left: 40px;
+    }
 }
