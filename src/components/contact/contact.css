@@ -49,16 +49,35 @@
     transform: scale(1.2);
   }
   
-
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .contact-container {
+      display: flex;
       flex-direction: column;
-      align-items: center; 
-      gap: 20px; 
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .back-to-top {
+      order: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-right: 6px;
+      margin-bottom: 10x;
     }
   
     .social-icons {
-      margin-top: 20px;
+      order: 2;
+      margin-top: 5px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .contact-container p {
+      order: 3;
+      text-align: center;
+      height: 0px;
     }
   }
   
