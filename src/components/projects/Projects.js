@@ -12,7 +12,7 @@ const Projects = () => {
     },
     {
       title: "Simon! A Flash Memory Game",
-      description: "A memory based, game where the player is asked to repeat a sequence of LED’s. A memorable person will be unstoppable! Do you remember? Well then, test your knowledge with Simon! Playable for 1 or 2 Players. There is a Single-Player mode with a challenging level up along with a Multi Player 1v1 challenge",
+      description: "A memory based, game where the player is asked to repeat a sequence of LED’s. A memorable person will be unstoppable! Do you remember? Well then, test your knowledge with Simon! Playable for 1 or 2 Players.",
       link: "https://github.com/piyushraz/simon-flash", 
       imageUrl: "activity.png"
     },
