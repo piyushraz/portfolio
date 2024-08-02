@@ -11,6 +11,12 @@ const Projects = () => {
 
     },
     {
+      title: "Timed Math Quiz",
+      description: "This is a timed mathematical quiz game implemented in Go. The quiz runs for a default time of 30 seconds and uses a default CSV file to extract mathematical problems.",
+      link: "https://github.com/piyushraz/quiz-game-timed", 
+      imageUrl: "quiz.png"
+    },
+    {
         title: "Wordle Arena",
         description: "Built a fully-functional multiplayer arena using React for the front-end and Web Sockets for real-time bi-directional communication, enhancing user engagement.",
         link: "https://github.com/piyushraz/wordle-react-web", 
