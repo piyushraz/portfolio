@@ -28,7 +28,7 @@ const Contact = () => {
           <a href="https://www.linkedin.com/in/piyushrazdan" target="_blank" rel="noopener noreferrer">
             <img src={`${process.env.PUBLIC_URL}/linkedin.png`} alt="LinkedIn" />
           </a>
-          <a href="https://devpost.com/piyushraz" target="_blank" rel="noopener noreferrer">
+          <a href="https://devpost.com/piyush-razdan" target="_blank" rel="noopener noreferrer">
             <img src={`${process.env.PUBLIC_URL}/devpost.png`} alt="Devpost" />
           </a>
         </div>
