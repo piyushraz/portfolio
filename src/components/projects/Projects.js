@@ -4,6 +4,13 @@ import './projects.css';
 const Projects = () => {
   const projects = [
     {
+        title: "UofT Purpose Platform",
+        description: "Led a development team in prototyping a gratitude-focused platform for local charities. Figma for UI/UX design and collaboration",
+        link: "https://charityplatform.vercel.app/", 
+        imageUrl: "charity.png"
+
+    },
+    {
         title: "Wordle Arena",
         description: "Built a fully-functional multiplayer arena using React for the front-end and Web Sockets for real-time bi-directional communication, enhancing user engagement.",
         link: "https://github.com/piyushraz/wordle-react-web", 
