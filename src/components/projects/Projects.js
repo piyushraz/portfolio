@@ -11,6 +11,12 @@ const Projects = () => {
 
     },
     {
+      title: "Simon! A Flash Memory Game",
+      description: "A memory based, game where the player is asked to repeat a sequence of LED’s. A memorable person will be unstoppable! Do you remember? Well then, test your knowledge with Simon! Playable for 1 or 2 Players. There is a Single-Player mode with a challenging level up along with a Multi Player 1v1 challenge",
+      link: "https://github.com/piyushraz/simon-flash", 
+      imageUrl: "activity.png"
+    },
+    {
       title: "Timed Math Quiz",
       description: "This is a timed mathematical quiz game implemented in Go. The quiz runs for a default time of 30 seconds and uses a default CSV file to extract mathematical problems.",
       link: "https://github.com/piyushraz/quiz-game-timed", 
