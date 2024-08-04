@@ -11,7 +11,7 @@ const Title = () => {
 
     return (
         <div className="title-container">
-            <h1>Piyush Razdan</h1>
+            <h1>PIYUSH RAZDAN</h1>
             <p>Software Developer & Engineer</p>
             <div className="buttons">
                 <button onClick={() => window.location = 'resume.pdf'}>View Resume</button>
