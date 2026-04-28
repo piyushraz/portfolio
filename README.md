@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Piyush Razdan — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site. Built with React, deployed to GitHub Pages.
 
-## Available Scripts
+**Live:** https://piyushraz.github.io/portfolio
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- **React 18** (Create React App)
+- **react-scroll** for in-page section navigation with active-section spy
+- **gh-pages** for deployment
+- **Inter / Space Grotesk / JetBrains Mono** (Google Fonts)
+- Pure CSS — no UI library, no Tailwind. CSS variables drive light/dark theming.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Sections
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`Title → About → Experience → Education → Projects → Skills → Contact`
 
-### `npm test`
+Highlights:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Animated code-rain hero** — canvas-based, syntax-highlighted code snippets flow horizontally in three parallax depth layers; blurred and dimmed so the title text reads cleanly.
+- **Typewriter role headline** that cycles through `Software Developer → GenAI Engineer → RAG Builder → Agentic Systems Developer → MCP Practitioner → A2A Architect → AI Orchestrator`.
+- **Theme toggle** (light / dark) — persisted to `localStorage`; defaults to system preference; the entire site re-themes via CSS variables.
+- **Hide-on-scroll-down navbar** with floating glass capsule, animated gradient border, sliding active-pill that follows hover and active section, and a chamfered "PR" emblem with a rotating conic-gradient ring.
+- **Radial mobile nav** — bottom-right FAB that fans out 6 numbered circles with hub-and-spoke connecting lines; replaces the desktop hamburger on screens ≤880px.
+- **Reveal-on-scroll** for sections, cards, and chips via `IntersectionObserver`.
+- **3D tilt + cursor spotlight** on Project, Experience, and Education cards (mouse only — disabled on `(hover: none)` devices).
+- **Mobile-aware perf** — code-rain canvas runs at lower fps and density on phones.
 
-### `npm run build`
+## Local development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+npm start          # http://localhost:3000/portfolio (hot reload)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open the dev URL with the trailing `/portfolio` path — `homepage` in `package.json` is set to the production URL, and the dev server respects that base path.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Build
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Outputs an optimized static bundle to `build/`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploy (GitHub Pages)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run deploy
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Runs `predeploy` (`npm run build`) and force-pushes the build output to the `gh-pages` branch via the `gh-pages` package. GitHub Pages serves that branch.
 
-## Learn More
+First-time only: in the GitHub repo, go to **Settings → Pages**, set source to **Deploy from a branch**, branch **gh-pages**, folder **/ (root)**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+  App.js, App.css            # routes, theme state, CSS variables
+  components/
+    background/              # canvas code-rain + radial glows
+    title/                   # hero name + role typewriter + CTAs
+    navbar/                  # desktop nav, theme toggle, RadialNav (mobile)
+    about/
+    experience/              # alternating timeline with pulsing dots
+    education/
+    projects/                # card grid with tilt + spotlight
+    skills/                  # categorized chips
+    contact/
+    reveal/                  # IntersectionObserver wrapper + useTilt hook
+public/
+  resume.pdf                 # source of truth for content
+  *.png                      # project thumbnails
+```
 
-### Code Splitting
+## Customization knobs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Theme colors: `--accent`, `--accent-2`, `--accent-3` in `src/App.css`
+- Fonts: `--font-sans`, `--font-display`, `--font-mono` in `src/App.css`
+- Roles cycle list: `ROLES` in `src/components/title/Title.js`
+- Code snippets in the hero: `SNIPPETS` in `src/components/background/Background.js`
+- Section content: each component's `.js` file (no CMS)
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Email:** piyush.razdan@gmail.com
+- **GitHub:** https://github.com/piyushraz
+- **LinkedIn:** https://www.linkedin.com/in/piyushrazdan
