@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <div className="contact-section">
       <div className="contact-container">
-        <p>Copyright  &copy; 2024 Piyush Razdan</p>
+        <p>Copyright &copy; 2026 Piyush Razdan</p>
         <div className="back-to-top" onClick={scrollToTop}>
           <img src={`${process.env.PUBLIC_URL}/up.png`} alt="Back to top" />
         </div>

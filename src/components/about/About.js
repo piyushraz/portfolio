@@ -1,21 +1,32 @@
 import React from 'react';
-import './about.css'; 
+import Reveal from '../reveal/Reveal';
+import './about.css';
 
 const About = () => {
   return (
     <div className="about-section">
       <div className="about-title">
-        <h1>About Me</h1>
+        <Reveal as="h1">About Me</Reveal>
       </div>
-      <div className="about-content">
+      <Reveal className="about-content" delay={120}>
         <p>
-          Hey there! I am Piyush, a student at the University of Toronto specializing in computer science. I like Python, Java, JavaScript, C, and React. I am very open to learning new things and working on projects. Feel free to reach out at any time.
+          Hey there! I'm Piyush, a Software Developer at <strong>IBM</strong>. I graduated from the <strong>University of Toronto</strong> with an Honours Bachelor of Science in Computer Science &amp; Geospatial Data Science (HBSc with Distinction). My day-to-day is building agentic systems &mdash; multi-model GenAI assistants, RAG pipelines, A2A/MCP integrations, and LangGraph orchestration &mdash; across SaaS, on-prem, and air-gapped OpenShift deployments.
         </p>
-        <br></br>
-        <p>Site and Resume: <a href="https://piyush.com">Domain Incoming.</a></p>
-        <p>GitHub: <a href="https://github.com/piyushraz">https://github.com/piyushraz</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/piyushrazdan">https://www.linkedin.com/in/piyushrazdan</a></p>
-      </div>
+        <div className="about-links">
+          <a className="about-link" href="mailto:piyush.razdan@gmail.com">
+            <span className="about-link-label">Email</span>
+            <span className="about-link-value">piyush.razdan@gmail.com</span>
+          </a>
+          <a className="about-link" href="https://github.com/piyushraz" target="_blank" rel="noopener noreferrer">
+            <span className="about-link-label">GitHub</span>
+            <span className="about-link-value">github.com/piyushraz</span>
+          </a>
+          <a className="about-link" href="https://www.linkedin.com/in/piyushrazdan" target="_blank" rel="noopener noreferrer">
+            <span className="about-link-label">LinkedIn</span>
+            <span className="about-link-value">linkedin.com/in/piyushrazdan</span>
+          </a>
+        </div>
+      </Reveal>
     </div>
   );
 };

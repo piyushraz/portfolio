@@ -1,66 +1,93 @@
 import React from 'react';
+import Reveal from '../reveal/Reveal';
+import { useTilt } from '../reveal/useTilt';
 import './projects.css';
 
 const Projects = () => {
+  const tilt = useTilt(7);
   const projects = [
     {
-        title: "UofT Purpose Platform",
-        description: "Led a development team in prototyping a gratitude-focused platform for local charities. Figma for UI/UX design and collaboration",
-        link: "https://charityplatform.vercel.app/", 
-        imageUrl: "charity.png"
-
+      title: "MiniQuest Portal",
+      description: "PHP mini-games platform built on an MVC architecture with PostgreSQL and page tokens for session security. Designed a normalized relational schema to cut load times and eliminate data retrieval errors.",
+      tech: ["PHP", "PostgreSQL", "MVC", "HTML5", "CSS"],
+      link: "https://github.com/piyushraz",
+      imageUrl: "code-background.jpg"
     },
     {
-      title: "Simon! A Flash Memory Game",
-      description: "A memory based, game where the player is asked to repeat a sequence of LED’s. A memorable person will be unstoppable! Do you remember? Well then, test your knowledge with Simon! Playable for 1 or 2 Players.",
-      link: "https://github.com/piyushraz/simon-flash", 
-      imageUrl: "activity.png"
+      title: "Wordle Multiplayer Arena",
+      description: "Real-time multiplayer Wordle in React with WebSockets for bi-directional communication and timed 60-second rounds. Back-end APIs developed with JUnit test-driven workflows and deployed to UofT's server.",
+      tech: ["React", "Node", "Express", "WebSockets", "JS"],
+      link: "https://github.com/piyushraz/wordle-react-web",
+      imageUrl: "wordle.png"
     },
     {
-      title: "Timed Math Quiz",
-      description: "This is a timed mathematical quiz game implemented in Go. The quiz runs for a default time of 30 seconds and uses a default CSV file to extract mathematical problems.",
-      link: "https://github.com/piyushraz/quiz-game-timed", 
-      imageUrl: "quiz.png"
+      title: "Donor-Charity Platform",
+      description: "Co-built a charity-donor engagement platform in Next.js and TypeScript on Vercel, with real-time chat and analytics for charity operations. Ran usability testing with 6 participants and shipped quarterly financial transparency reports.",
+      tech: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
+      link: "https://charityplatform.vercel.app/",
+      imageUrl: "charity.png"
     },
     {
-        title: "Wordle Arena",
-        description: "Built a fully-functional multiplayer arena using React for the front-end and Web Sockets for real-time bi-directional communication, enhancing user engagement.",
-        link: "https://github.com/piyushraz/wordle-react-web", 
-        imageUrl: "wordle.png"
-    },
-    {
-      title: "Three Musketeers AI-Augmented",
-      description: "Developed an AI-driven board game, Three Musketeers, using Java and JavaFX, featuring a greedy AI agent implemented with the minimax algorithm, emphasizing object-oriented programming principles.",
-      link: "https://github.com/piyushraz/Java-Three-Musketeers", // Placeholder link, replace with actual project URL
-      imageUrl: "threem.jpg" // Placeholder image
+      title: "Three Musketeers AI",
+      description: "AI-driven board game in Java and JavaFX with a greedy agent powered by recursive minimax across 3 board configurations. Applied 3+ creational design patterns and managed iterative development with agile sprints and CI.",
+      tech: ["Java", "JavaFX", "JUnit", "GitHub Actions"],
+      link: "https://github.com/piyushraz/Java-Three-Musketeers",
+      imageUrl: "threem.jpg"
     },
     {
       title: "Echo Modifier",
-      description: "Designed and implemented a program that modifies the pitch and speed of audio files in C.",
-      link: "https://github.com/piyushraz/c-wave-program", // Placeholder link, replace with actual project URL
-      imageUrl: "wav.png" // Placeholder image
+      description: "Designed and implemented a program in C that modifies the pitch and speed of audio files.",
+      tech: ["C", "DSP"],
+      link: "https://github.com/piyushraz/c-wave-program",
+      imageUrl: "wav.png"
+    },
+    {
+      title: "Timed Math Quiz",
+      description: "Timed mathematical quiz game implemented in Go. The quiz runs for a default time of 30 seconds and uses a default CSV file to extract mathematical problems.",
+      tech: ["Go", "CSV"],
+      link: "https://github.com/piyushraz/quiz-game-timed",
+      imageUrl: "quiz.png"
     },
     {
       title: "RainMan Discord Weather Bot",
-      description: "Created a Discord bot that provides real-time weather information for any location using the OpenWeatherMap API and Discord.py.",
-      link: "https://devpost.com/software/rainman-r6hqfs", // Placeholder link, replace with actual project URL
-      imageUrl: "discord.png" // Placeholder image
+      description: "Discord bot that provides real-time weather information for any location using the OpenWeatherMap API and Discord.py.",
+      tech: ["Python", "Discord.py", "OpenWeather"],
+      link: "https://devpost.com/software/rainman-r6hqfs",
+      imageUrl: "discord.png"
     }
   ];
 
   return (
     <div className="projects-section">
-      <h1>Featured Projects</h1>
+      <Reveal as="h1">Featured Projects</Reveal>
       <div className="projects-container">
         {projects.map((project, index) => (
-          <div className="project-item" key={index}>
-            <img src={project.imageUrl} alt={project.title} className="project-image" />
+          <Reveal
+            className="project-item"
+            key={index}
+            delay={(index % 3) * 80}
+            direction="up"
+            {...tilt}
+          >
+            <span className="project-spotlight" aria-hidden="true"></span>
+            <div className="project-image-wrap">
+              <img src={`${process.env.PUBLIC_URL}/${project.imageUrl}`} alt={project.title} className="project-image" />
+              <div className="project-overlay">
+                <button className="view-button" onClick={() => window.open(project.link, '_blank')}>
+                  View Project &rarr;
+                </button>
+              </div>
+            </div>
             <div className="project-details">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <button className="view-button" onClick={() => window.open(project.link, '_blank')}>View Project</button>
+              <div className="project-tech">
+                {project.tech.map((t) => (
+                  <span className="tech-chip" key={t}>{t}</span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>

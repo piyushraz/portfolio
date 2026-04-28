@@ -3,13 +3,90 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; 
-    background-image: url('C:/Profile/my-app/public/code-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(7px);
-    transform: scale(1.1);
-    z-index: -1; 
-  }
-  
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    background:
+        radial-gradient(120% 80% at 50% 30%, #0e1a30 0%, #0b1220 60%, #060912 100%);
+}
+
+.background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    filter: blur(2.4px);
+    animation: bgFadeIn 1.6s ease-out 0.2s forwards;
+    mask-image: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0,0,0,0.4) 5%,
+        rgba(0,0,0,1) 18%,
+        rgba(0,0,0,1) 82%,
+        rgba(0,0,0,0.4) 95%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0,0,0,0.4) 5%,
+        rgba(0,0,0,1) 18%,
+        rgba(0,0,0,1) 82%,
+        rgba(0,0,0,0.4) 95%,
+        transparent 100%);
+}
+
+@keyframes bgFadeIn {
+    to { opacity: 0.55; }
+}
+
+/* faint grid for that "code editor" feel */
+.background-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 198, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 198, 255, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px, 48px 48px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(circle at 50% 45%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0) 85%);
+    -webkit-mask-image: radial-gradient(circle at 50% 45%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0) 85%);
+    pointer-events: none;
+}
+
+/* drifting color glows */
+.background-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(36% 38% at 18% 28%, rgba(0, 198, 255, 0.30), transparent 70%),
+        radial-gradient(40% 42% at 82% 72%, rgba(0, 123, 255, 0.30), transparent 70%),
+        radial-gradient(28% 30% at 60% 18%, rgba(120, 80, 255, 0.22), transparent 70%);
+    background-size: 200% 200%, 200% 200%, 200% 200%;
+    animation: bgDrift 22s ease-in-out infinite alternate;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+/* center spotlight + edge vignette so title pops */
+.background-vignette {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(45% 40% at 50% 48%, rgba(11, 18, 32, 0.7) 0%, rgba(11, 18, 32, 0.35) 60%, rgba(11, 18, 32, 0.05) 100%),
+        radial-gradient(85% 85% at 50% 50%, rgba(11, 18, 32, 0) 45%, rgba(11, 18, 32, 0.85) 100%);
+    pointer-events: none;
+}
+
+@keyframes bgDrift {
+    0%   { background-position: 0% 0%, 100% 100%, 50% 0%; }
+    100% { background-position: 30% 40%, 60% 60%, 80% 30%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background-glow { animation: none; }
+}
+
+@media (max-width: 600px) {
+    .background-canvas { opacity: 0.65; }
+}
