@@ -1,49 +1,152 @@
 .title-container {
-    position: absolute; 
-    top: 50%; 
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    color: white; 
+    color: white;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 10px; 
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: min(92%, 900px);
+    z-index: 2;
 }
 
-.title-container h1 {
+.title-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.95em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s ease-out forwards;
+}
+
+.title-name {
+    font-family: var(--font-display);
     margin: 0;
     padding: 0;
-    font-size: 6em; 
-    font-weight: bold; 
-    line-height: 1;
+    font-size: clamp(2.6rem, 9vw, 6.4rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.25s ease-out forwards;
 }
 
-.title-container p {
-    font-size: 2.5em; 
-    margin: 0; 
+.title-name-gradient {
+    background: linear-gradient(120deg, #ffffff 0%, #b8e0ff 35%, #66c0ff 70%, #007bff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s ease-in-out infinite;
+}
+
+.title-role {
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    min-height: 1.4em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s ease-out forwards;
+}
+
+.role-text {
+    font-family: var(--font-mono);
+    background: linear-gradient(90deg, #00c6ff, #87e0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.role-caret {
+    display: inline-block;
+    width: 3px;
+    height: 1.05em;
+    background: #00c6ff;
+    margin-left: 4px;
+    border-radius: 2px;
+    animation: blink 0.9s step-end infinite;
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.7);
 }
 
 .buttons {
     display: flex;
-    justify-content: center; 
-    width: 100%; 
-    margin-top: 20px; 
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.55s ease-out forwards;
 }
 
-.buttons button {
-    margin: 0 10px; 
-    padding: 10px 25px; 
-    font-size: 1.5em; 
-    color: white; 
-    background-color: transparent; 
-    border: 2px solid white; 
-    border-radius: 25px;
-    cursor: pointer; 
-    transition: all 0.3s ease; 
+.btn {
+    padding: 12px 28px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+                background-color 0.25s ease, color 0.25s ease;
+    letter-spacing: 0.4px;
 }
 
-.buttons button:hover {
-    background-color: white; 
-    color: darkslategray; 
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    border: 2px solid transparent;
+    box-shadow: 0 8px 22px rgba(0, 123, 255, 0.45);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 123, 255, 0.55);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px) scale(1.02);
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #0b1220;
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.99);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .title-eyebrow { letter-spacing: 3px; font-size: 0.95em; }
+    .buttons { gap: 10px; }
+    .btn { padding: 10px 22px; font-size: 0.95rem; }
 }

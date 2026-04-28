@@ -1,0 +1,208 @@
+.radial-nav { display: none; }
+.radial-backdrop { display: none; }
+
+@media (max-width: 880px) {
+    .radial-nav {
+        display: block;
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        width: 56px;
+        height: 56px;
+        z-index: 1100;
+    }
+
+    .radial-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(7, 16, 30, 0.5);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        z-index: 1090;
+        animation: radialBackdropIn 0.25s ease-out forwards;
+    }
+
+    @keyframes radialBackdropIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* the FAB */
+    .radial-fab {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        border: 0;
+        cursor: pointer;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+            0 8px 22px rgba(0, 123, 255, 0.5),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+                    box-shadow 0.3s ease;
+    }
+
+    .radial-fab::before {
+        content: '';
+        position: absolute;
+        inset: -5px;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg,
+            rgba(0, 198, 255, 0.7),
+            rgba(120, 80, 255, 0.7),
+            rgba(0, 123, 255, 0.7),
+            rgba(0, 198, 255, 0.7));
+        filter: blur(7px);
+        opacity: 0.55;
+        z-index: -1;
+        animation: radialAura 4s linear infinite;
+    }
+
+    @keyframes radialAura {
+        to { transform: rotate(360deg); }
+    }
+
+    .radial-nav.is-open .radial-fab {
+        transform: rotate(135deg) scale(0.94);
+        box-shadow:
+            0 12px 30px rgba(0, 198, 255, 0.6),
+            0 0 0 1px rgba(255, 255, 255, 0.14) inset;
+    }
+
+    .radial-fab-icon {
+        position: relative;
+        width: 18px;
+        height: 14px;
+        display: inline-block;
+    }
+
+    .radial-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+                    opacity 0.2s ease;
+    }
+
+    .radial-bar:nth-child(1) { top: 0; }
+    .radial-bar:nth-child(2) { top: 6px; }
+    .radial-bar:nth-child(3) { top: 12px; }
+
+    .radial-nav.is-open .radial-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .radial-nav.is-open .radial-bar:nth-child(2) { opacity: 0; }
+    .radial-nav.is-open .radial-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* items emanate from the center of the FAB */
+    .radial-items {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .radial-item-wrap {
+        position: absolute;
+        top: -22px;
+        left: -22px;
+        width: 44px;
+        height: 44px;
+        opacity: 0;
+        scale: 0.4;
+        translate: 0 0;
+        transition:
+            translate 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+            scale 0.35s ease,
+            opacity 0.25s ease;
+        transition-delay: 0ms;
+        pointer-events: none;
+    }
+
+    .radial-nav.is-open .radial-item-wrap {
+        opacity: 1;
+        scale: 1;
+        translate: var(--x, 0) var(--y, 0);
+        transition-delay: calc(var(--i, 0) * 38ms);
+        pointer-events: auto;
+    }
+
+    .radial-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(11, 18, 32, 0.96);
+        border: 1px solid rgba(0, 198, 255, 0.32);
+        color: #cfe9ff;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow:
+            0 6px 16px rgba(0, 0, 0, 0.45),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .radial-item:active { transform: scale(0.92); }
+
+    .radial-item.is-active {
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        border-color: transparent;
+        color: #ffffff;
+        box-shadow:
+            0 8px 22px rgba(0, 198, 255, 0.55),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .radial-item-num {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        line-height: 1;
+    }
+
+    /* connecting lines from FAB center to each circle */
+    .radial-lines {
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    .radial-line {
+        transition: stroke-dashoffset 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .radial-nav.is-open .radial-line {
+        stroke-dashoffset: 0 !important;
+    }
+
+    /* hide the top bar's hamburger and dropdown — radial replaces them */
+    .navbar-toggle { display: none !important; }
+    .navbar-links { display: none !important; }
+}
+
+@media (max-width: 360px) {
+    .radial-nav { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .radial-item-wrap { transition: opacity 0.2s ease; }
+    .radial-fab::before { animation: none; }
+}

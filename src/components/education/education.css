@@ -1,116 +1,156 @@
 .education-section {
-  padding: 40px; 
-  background-color: white;
-  color: #333;
-  overflow: auto; 
+  padding: 80px 24px 90px;
+  color: var(--text);
 }
 
 .education-section h1 {
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 20px; 
-  color: #333;
+  font-size: clamp(2rem, 4.5vw, 2.7rem);
+  font-weight: 800;
+  margin: 0 0 50px;
+  color: var(--text);
+  letter-spacing: -0.5px;
   position: relative;
 }
 
 .education-section h1::after {
   content: '';
   display: block;
-  width: 50px; 
-  height: 3px;
-  background-color: #007bff; 
-  margin: 5px auto 0; 
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  margin: 14px auto 0;
 }
 
 .education-container {
-  width: 40%;
+  max-width: 880px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: 15px;
+  gap: 18px;
 }
 
 .education-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: white;
-  outline-style: solid;
-  outline-width: thin;
-  outline-color: lightgrey;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1100px)
+             rotateX(var(--rx, 0deg))
+             rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+
+.education-item:hover {
+  transform: perspective(1100px)
+             rotateX(var(--rx, 0deg))
+             rotateY(var(--ry, 0deg))
+             translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.edu-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 198, 255, 0.18),
+    transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+.education-item:hover .edu-spotlight { opacity: 1; }
+
+.education-content,
+.education-dates {
+  position: relative;
+  z-index: 1;
+}
+
+.education-content {
+  flex: 1;
+  padding-left: 8px;
 }
 
 .education-content h2 {
-  font-weight: 200;
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 6px;
+  color: var(--text);
 }
 
 .education-content h3 {
-  font-size: 1em;
-  margin-bottom: 5px;
-  color: #666;
+  font-size: 1rem;
+  margin: 0 0 12px;
+  color: var(--accent-strong);
+  font-weight: 600;
 }
 
 .education-content ul {
-  padding-top: 3px;
   list-style-type: disc;
   padding-left: 20px;
+  margin: 0;
 }
 
 .education-content ul li {
   margin: 5px 0;
-  line-height: 1.2;
-  font-size: 0.9em;
+  line-height: 1.55;
+  font-size: 0.95rem;
+  color: var(--text-mute);
+}
+
+.education-content ul li::marker {
+  color: var(--accent-2);
 }
 
 .education-dates {
-  padding-bottom: 70px;
-  font-size: 0.9em;
-  color: #666;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-strong);
   text-align: right;
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
-  .education-section {
-    padding: 20px; 
-  }
-
-  .education-container {
-    width: 80%; 
-  }
-
+@media (max-width: 720px) {
   .education-item {
-    flex-direction: column; 
-    align-items: flex-start; 
-    padding: 20px; 
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
-
-  .education-dates {
-    padding-bottom: 20px;
-    text-align: left; 
-  }
+  .education-dates { text-align: left; align-self: flex-start; }
 }
 
-@media (max-width: 600px) {
-  .education-section {
-    padding: 10px; 
-  }
-
-  .education-container {
-    width: 100%; 
-  }
-
-  .education-item {
-    flex-direction: column; 
-    align-items: flex-start; 
-    padding: 15px; 
-  }
-
-  .education-dates {
-    padding-bottom: 10px;
-    text-align: left; 
-  }
+@media (hover: none) {
+  .education-item { transform: none !important; }
+  .edu-spotlight { display: none; }
 }
